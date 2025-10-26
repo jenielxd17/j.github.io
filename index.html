@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Nini 💖</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="text-gray-800">
+  <div id="login-screen" class="fixed inset-0 flex flex-col items-center justify-center bg-pink-50 z-50">
+    <div id="login-box" class="bg-white shadow-lg rounded-2xl p-8 text-center w-80 transition-all">
+      <h2 class="text-2xl font-bold mb-4 text-pink-500">💖 Hi Love 💖</h2>
+      <p class="text-gray-600 mb-4">Enter your secret birthday code 🎁</p>
+      <input id="pin-input" type="password" maxlength="6" placeholder="Enter PIN" 
+             class="border border-pink-300 rounded-lg px-4 py-2 text-center text-lg focus:ring-2 focus:ring-pink-400">
+      <button id="pin-btn" class="mt-4 bg-pink-500 text-white px-5 py-2 rounded-lg hover:bg-pink-600 transition-all">Unlock Gift</button>
+      <p id="error-msg" class="text-red-500 mt-2 opacity-0 transition-opacity">Incorrect PIN</p>
+    </div>
+  </div>
+  <div id="main-content" class="hidden">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#love">Letter</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#music">Music</a>
+      <a href="#notes">Notes</a>
+    </nav>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+      <h1 class="text-6xl text-pink-500 script">Happy Birthday, Nini 🎂</h1>
+      <p class="mt-4 text-lg md:text-xl">To my favorite Enemy</p>
+      <button onclick="document.getElementById('love').scrollIntoView({behavior:'smooth'})" class="btn mt-8">Open Your Gift 💝</button>
+    </section>
+    <section id="love" class="py-20 bg-pink-50 text-center px-6">
+      <h2 class="text-4xl text-pink-500 script mb-8">Letter For You💌</h2>
+      <div class="max-w-3xl mx-auto bg-white p-8 rounded-3xl shadow-lg">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          My dearest Nini,<br><br>
+          Happy Birthday, Madam! Enjoy your day, Wishing you good health and more blessings to come. 
+          Thank you for everything, I'll always be here supporting you and helping you with your battles. 
+          I know we're struggling with our thesis, but we could overcome all this hardship. 
+          Eto muna gift ko HAHAHAHA bawi ako next month. 💖  
+          <br><br>
+          I’m very thankful for your love and I promise to keep choosing you everyday.  
+          <br><br>
+          With all my nguso,<br>
+          <span class="script text-White-500 text-2xl">— Your Enemy 💋</span>
+        </p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-8">
+          <img src="5.jpg" alt="Memory 1" class="rounded-xl shadow-md w-64 h-80 object-cover border-4 border-pink-200">
+          <img src="6.jpg" alt="Memory 2" class="rounded-xl shadow-md w-64 h-80 object-cover border-4 border-pink-200">
+        </div>
+      </div>
+    </section>
+  <section id="gallery" class="section">
+    <div class="wrapper">
+      <div class="inner" style="--quantity: 10;">
+        <div class="card" style="--index: 0;"><img src="21.jpg" class="img" alt="Gallery 1"></div>
+        <div class="card" style="--index: 1;"><img src="22.jpg" class="img" alt="Gallery 2"></div>
+        <div class="card" style="--index: 2;"><img src="23.jpg" class="img" alt="Gallery 3"></div>
+        <div class="card" style="--index: 3;"><img src="28.jpg" class="img" alt="Gallery 4"></div>
+        <div class="card" style="--index: 4;"><img src="1.jpg" class="img" alt="Gallery 5"></div>
+        <div class="card" style="--index: 5;"><img src="3.jpg" class="img" alt="Gallery 6"></div>
+        <div class="card" style="--index: 6;"><img src="30.jpg" class="img" alt="Gallery 7"></div>
+        <div class="card" style="--index: 7;"><img src="31.jpg" class="img" alt="Gallery 8"></div>
+        <div class="card" style="--index: 8;"><img src="32.jpg" class="img" alt="Gallery 9"></div>
+        <div class="card" style="--index: 9;"><img src="33.jpg" class="img" alt="Gallery 10"></div>
+      </div>
+    </div>
+  </section>
+<section id="music" class="py-20 text-center">
+    <h2 class="text-4xl text-pink-500 script mb-10">Enjoy The Music 🎵</h2>
+  <div class="music-bg">
+    <div class="music-container">
+      <img id="albumArt" src="7.jpg" alt="Album Art" class="album-art">
+      <div id="songTitle" class="song-title">You Belong With Me</div>
+      <div id="artist" class="artist">Taylor Swift</div>
+
+      <div class="progress-container">
+        <div id="progress" class="progress"></div>
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn">⏮</button>
+        <button id="playPauseBtn">⏯</button>
+        <button id="nextBtn">⏭</button>
+      </div>
+
+      <audio id="audioPlayer" class="hidden">
+        <source src="YBTM.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+</section>
+    <section id="notes" class="py-20 text-center">
+      <h2 class="text-4xl text-pink-500 script mb-6">Your Notes 📝</h2>
+      <form id="noteForm" class="max-w-md mx-auto space-y-4 px-4">
+        <textarea id="noteText" placeholder="Write a little note for Nini..." class="w-full p-3 border rounded-lg" required></textarea>
+        <button type="submit" class="btn w-full">Save Note 💖</button>
+      </form>
+      <div id="noteList" class="max-w-md mx-auto mt-8 text-left space-y-2 px-4"></div>
+    </section>
+    <footer class="py-8 text-center text-sm text-gray-500">
+      Made with 💖 for Nini | © 21st
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
